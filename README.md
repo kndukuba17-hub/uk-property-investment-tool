@@ -25,3 +25,11 @@ This project is an **end-to-end data pipeline** that:
 1.  Open the `Retail_Analysis_Pipeline.ipynb` file in this repository.
 2.  Click the **"Open in Colab"** badge (if visible) or download to run locally.
 3.  The script will generate mock data automatically—no external CSV download required.
+
+## 🔒 Data Privacy & Confidentiality Note
+To ensure compliance with **GDPR** and protect commercial sensitivity, this repository does **not** contain raw scraped data from live property portals.
+
+Instead, the notebook utilizes a **Synthetic Data Generator** (`generate_mock_listings()`) that replicates the statistical distribution and schema of the original dataset. This allows for full code reproducibility and peer review while ensuring strict adherence to data protection standards.
+
+* **Original Data Source:** [Redacted for Confidentiality]
+* **Method:** Python `random` & `numpy` distribution modelling.
