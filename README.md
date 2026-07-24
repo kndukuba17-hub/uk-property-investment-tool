@@ -1,35 +1,23 @@
-# 🛍️ Retail Sales & Customer Sentiment Pipeline
+# 🏠 UK Property Investment & Yield Screener
 
-## 📌 Business Overview
-In high-volume B2C retail (like Boots UK or Pharmica), analysing sales data alongside customer feedback is critical for maximizing revenue.
+> **📦 Archived / off-brand.** This is a rules-based property tool, not a core machine-learning project, and sits outside my main behavioural-AI portfolio. It's kept public for reference. The previous README on this repo incorrectly described a retail sentiment pipeline — that has been corrected to match the actual notebook.
 
-This project is an **end-to-end data pipeline** that:
-1.  **Generates realistic sales data:** Simulates transaction logs with messy real-world attributes (missing values, dates).
-2.  **Calculates Revenue Metrics:** Identifies top-performing categories and high-value products.
-3.  **Applies NLP (Natural Language Processing):** Uses `TextBlob` to automatically classify customer reviews as Positive, Neutral, or Negative.
-4.  **Visualizes ROI:** Produces actionable charts for stakeholders to identify quality control issues immediately.
+## What it does
+A screening tool that filters UK property listings to surface high-yield buy-to-let opportunities. It calculates acquisition costs — including **UK Stamp Duty Land Tax (SDLT)** — and rental yield, then ranks listings by ROI.
 
-## 🛠️ Tech Stack
-* **Core:** Python 3.10
-* **Data Manipulation:** Pandas, NumPy
-* **Machine Learning/NLP:** TextBlob (Sentiment Polarity Scoring)
-* **Visualization:** Matplotlib, Seaborn
-* **Environment:** Google Colab / Jupyter Notebooks
+- **Type:** rules-based financial calculator + ranking (not a predictive ML model).
+- **Data:** uses a `generate_mock_listings()` simulator standing in for a Rightmove/Zoopla scrape, so the notebook is reproducible without API keys. This is clearly a demonstration, not real market data.
 
-## 📊 Key Insights Generated
-* **Automated Quality Control:** The script flags products with a Net Sentiment Score below -0.1 for immediate review.
-* **Revenue Optimization:** Aggregates sales data to highlight "Cash Cow" categories vs. underperforming stock.
-* **Data Cleaning:** features robust handling of `Null` values in unstructured text data.
+## 🧰 Tech Stack
+Python · pandas · NumPy · Matplotlib · Seaborn
 
 ## 🚀 How to Run
-1.  Open the `Retail_Analysis_Pipeline.ipynb` file in this repository.
-2.  Click the **"Open in Colab"** badge (if visible) or download to run locally.
-3.  The script will generate mock data automatically—no external CSV download required.
+```bash
+git clone https://github.com/kndukuba17-hub/UK-Property-Investment-Tool.git
+cd UK-Property-Investment-Tool
+pip install -r requirements.txt
+jupyter notebook notebooks/uk_property_yield_screener.ipynb
+```
 
-## 🔒 Data Privacy & Confidentiality Note
-To ensure compliance with **GDPR** and protect commercial sensitivity, this repository does **not** contain raw scraped data from live property portals.
-
-Instead, the notebook utilizes a **Synthetic Data Generator** (`generate_mock_listings()`) that replicates the statistical distribution and schema of the original dataset. This allows for full code reproducibility and peer review while ensuring strict adherence to data protection standards.
-
-* **Original Data Source:** [Redacted for Confidentiality]
-* **Method:** Python `random` & `numpy` distribution modelling.
+---
+*If revisited, the natural upgrade is to wire in a real listings source and add a predictive price/yield model — at which point it would earn a place in the main portfolio.*
